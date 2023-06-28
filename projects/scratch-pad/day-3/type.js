@@ -14,8 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    Array.isArray(value) === true
-    
+    return Array.isArray(value);
+
 
     // YOUR CODE ABOVE HERE //
 }
@@ -30,32 +30,32 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-testObj = {a:1,b:2,c:3}
 
-let a = Object.prototype.toString.call(value);
 
-let b = Object.prototype.toString.call(testObj);
+//==============================================================
 
-if(value === 'Null') {
-    console.log(false) 
-} else if (Array.isArray(value) === true) 
-} else if {new instanceof now === Date()}
+//     testObj = {a:1,b:2,c:3}
 
-}
-}
+// let a = Object.prototype.toString.call(value);
+
+// let b = Object.prototype.toString.call(testObj);
+
+// if(value === 'Null') {
+//     console.log(false) 
+// } else if (Array.isArray(value) === true) 
+// } else if {new instanceof now === Date()}
+
+// }
+//     a === b){
+//     return true }
+//     else {
+//         return false
     
-    
-    
-    a === b){
-    return true }
-    else {
-        return false
-    
-     test to confirm not null,  === null 
-     not Array, Array.isArray
-     not a Date (instance of)
-}
-    
+//      test to confirm not null,  === null 
+//      not Array, Array.isArray
+//      not a Date (instance of)
+// }
+//   //  ================================================================
     
     // YOUR CODE ABOVE HERE //
 }
@@ -66,15 +66,16 @@ if(value === 'Null') {
  * 
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
-function isCollection(value) {
-    // YOUR CODE BELOW HERE //
+// function isCollection(value) {
+//     // YOUR CODE BELOW HERE //
     
-    Array,isArray; true
-    null === 'null'; false; 
-    new instanceof now === Date;
-    else if object typeof === object 
-    
-    
+//     Array,isArray; true
+//     null === 'null'; false; 
+//     new instanceof now === Date;
+//     else if object typeof === object 
+ obj ={   
+
+//artificial object placed above to maintain error free environment
     // YOUR CODE ABOVE HERE //
 }
 
@@ -100,17 +101,17 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    Types are one of: 
-    *    - "string"
-    *    - "array"
-    *    - "object"
-    *    - "undefined"
-    *    - "number"
-    *    - "boolean"
-    *    - "null"
-    *    - "function"
-    *    - "date"
-    * 
+    // Types are one of: 
+    // typeof "string"   - "string"
+    // *    - "array"
+    // *    - "object"
+    // *    - "undefined"
+    // *    - "number"
+    // *    - "boolean"
+    // *    - "null"
+    // *    - "function"
+    // *    - "date"
+    // * 
     
     
     // YOUR CODE ABOVE HERE //
