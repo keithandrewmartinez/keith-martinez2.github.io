@@ -24,7 +24,7 @@ console.log(animal);
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-let noises = [];
+var noises = [];
 
 noises[0] = 'oootza'; 
 noises.push('iopaa');
@@ -42,7 +42,7 @@ console.log(animal);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 animal.noises = [noises];
- animal.noises.push(weeeeeooohh) = 
+ animal.noises.push('weeeeeooohh');
 
 
 /* *******************************************************************
@@ -71,10 +71,23 @@ animal.noises = [noises];
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-let animals = [];
+var animals = [];
 
 animals.push(animal);
 console.log(animals);
+
+var duck = {};
+
+duck = {
+  species: 'duck', 
+  name:'Jerome',
+noises:['quack','honk','sneeze', 'woosh']}
+
+animals.push(duck);
+
+console.log(animals);
+console.log(animals.length);
+
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////

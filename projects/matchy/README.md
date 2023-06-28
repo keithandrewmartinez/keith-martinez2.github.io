@@ -69,7 +69,7 @@ As we code, save and refresh the browser tab running Matchy. Your work will begi
  1. [√] Using **bracket syntax**, assign the `noises` property on `animal` to our new `noises` array.
  2. [√] Using any syntax add another noise to the `noises` property on `animal`.
  3. [√] `console.log` `animal`.
- 4. [ ] Does it look right?
+ 4. [√] Does it look right?
 
 
 ## Step 4 - Review
@@ -82,10 +82,10 @@ It's super important to give your brain and yourself a rest when you can! Grab a
 ## Step 6 - A Collection of Animals
  1. [√] Create a variable named `animals` and assign it to an empty array.
  2. [√] `push` our `animal` that we created to `animals`. You should now see your first animal appear on your `index.html` page!
- 3. [ ] `console.log` `animals`. What does it look like?
- 4. [ ] Create a variable called `duck` and assign it to the data:
+ 3. [√] `console.log` `animals`. What does it look like?
+ 4. [√] Create a variable called `duck` and assign it to the data:
   - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
- 5. [ ] `push` `duck` to `animals`
+ 5. [√] `push` `duck` to `animals`
  6. [ ] `console.log` `animals`. What does it look like?
  7. [ ] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
  8. [ ] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
