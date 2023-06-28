@@ -14,6 +14,9 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+ //=========================================================
+ //1. Type of: Array
+
     return Array.isArray(value);
 
 
@@ -30,31 +33,31 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-
-
 //==============================================================
+ //2. Type of: Object
 
-//     testObj = {a:1,b:2,c:3}
 
-// let a = Object.prototype.toString.call(value);
+    testObj = {a:1,b:2,c:3}
 
-// let b = Object.prototype.toString.call(testObj);
+let a = Object.prototype.toString.call(value);
 
-// if(value === 'Null') {
-//     console.log(false) 
-// } else if (Array.isArray(value) === true) 
-// } else if {new instanceof now === Date()}
+let b = Object.prototype.toString.call(testObj);
 
-// }
-//     a === b){
-//     return true }
-//     else {
-//         return false
+if(value === 'Null') {
+    console.log(false) 
+} else if (Array.isArray(value) === true) 
+} else if {new instanceof now === Date()}
+
+}
+    a === b){
+    return true }
+    else {
+        return false
     
-//      test to confirm not null,  === null 
-//      not Array, Array.isArray
-//      not a Date (instance of)
-// }
+     test to confirm not null,  === null 
+     not Array, Array.isArray
+     not a Date (instance of)
+}
 //   //  ================================================================
     
     // YOUR CODE ABOVE HERE //
