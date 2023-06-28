@@ -88,6 +88,25 @@ animals.push(duck);
 console.log(animals);
 console.log(animals.length);
 
+chocobo = { 
+  species: 'bird',
+  name: 'Choco',
+  noises: ['eet', 'yeet', 'tweet', 'uh-hmm']
+}
+
+  animals.push(chocobo);
+
+chako = {
+  species: 'dog',
+  name: 'Chako',
+  noises: ['rooo', 'nyar', 'ziii']
+
+}
+
+animals.push(chako);
+
+console.log(animals);
+console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////

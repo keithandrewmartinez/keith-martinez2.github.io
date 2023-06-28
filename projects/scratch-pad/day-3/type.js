@@ -14,10 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    if (Array.isArray(value) === true){
-        return true
-    } else
-    return false
+    Array.isArray(value) === true
+    
 
     // YOUR CODE ABOVE HERE //
 }
@@ -40,7 +38,7 @@ let b = Object.prototype.toString.call(testObj);
 
 if(value === 'Null') {
     console.log(false) 
-} else if {(Array.isArray(value) === true) 
+} else if (Array.isArray(value) === true) 
 } else if {new instanceof now === Date()}
 
 }

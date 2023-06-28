@@ -86,8 +86,8 @@ It's super important to give your brain and yourself a rest when you can! Grab a
  4. [√] Create a variable called `duck` and assign it to the data:
   - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
  5. [√] `push` `duck` to `animals`
- 6. [ ] `console.log` `animals`. What does it look like?
- 7. [ ] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
+ 6. [√] `console.log` `animals`. What does it look like?
+ 7. [√] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
  8. [ ] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
 
 
