@@ -1,0 +1,170 @@
+
+<!-- The first couple of tags tell browser to render document using most recent version of HTML -->
+
+<!DOCTYPE html>
+<html>
+
+<!-- Identify the metadata for the webpage in the head section below-->
+  
+    <head>
+          <!-- <meta charset="utf-8">
+                <!-- The above and below code provides character instructions and window based interpretation instructions -->
+          <!-- <meta name="viewport" content="width=device-width"> -->
+
+<!--Title is the name of the site shown in browser tab -->
+
+            <title> My Personal Website</title>
+
+<!-- Linking a style sheet for CSS is done with the code indicated below, embedded within the head of the index -->
+      
+          <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+          <style>
+              body {
+                  background: rgb(125, 198, 205);
+                  color: rgb(45, 45, 45);
+                  padding: 10px;
+                  font-family: arial;
+              }
+              #all-contents {
+                  max-width: 800px;
+                  margin: auto;
+              }
+          
+              /* navigation menu */
+              nav {
+                  background: rgb(239, 80, 41);
+                  margin: 0 auto;
+                  margin-bottom: 20px;
+                  display: flex;
+                  padding: 10px;
+                  border-radius: 10px;
+              }
+              nav h1 {
+                  display: flex;
+                  align-items: center;
+                  color: white;
+                  flex: 1;
+                  margin: 0;
+              }
+              nav ul {
+                  list-style-image: none;
+              }
+              nav li {
+                  display: inline-block;
+                  padding: 0 10px;
+              }
+              nav a {
+                  text-decoration: none;
+                  color: #fff;
+              }
+          
+              /* main container area beneath menu */
+              main {
+                  background: rgb(245, 238, 219);
+                  display: flex;
+              }
+              .sidebar {
+                  margin-right: 25px;
+                  padding: 10px;
+              }
+              .sidebar img {
+                  width: 200px;
+              }
+              .content {
+                  flex: 1;
+                  padding: 15px;
+              }
+              h2, h3 {
+                  margin: 0px;
+              }
+          
+              img {
+                border: 20px;
+                border-radius: 20px;
+              }
+          </style>
+          
+    </head>
+
+  <!-- All visible content is placed within the body tags below -->
+
+<body>
+  
+<!-- initial div tag labeled id below will contain all site content and provide a means to manipulate all of it via CSS -->
+  
+      <div id="all-contents"> 
+
+     <!-- Site navigation is labeled with the nav tag to provide a distinct sidebar or column for the page -->
+        <nav>
+          <h1> Keith Andrew Martinez Website</h1>
+            <ul>
+              <li>
+                  <a href="index.html"> Home </a>
+              </li>
+              <li>
+                  <a href="projects/Portfolio/portfolio.html"> Portfolio </a>  
+              </li>
+
+            </ul>
+        </nav>
+      </div>
+        <main>
+         <div class="sidebar">
+<!-- <img src="projects/first-website/Images/CircleCropProfile.jpg"> locally hosted and uploaded profile image-->
+          </div>
+           
+
+            <div class="content">
+                  <h2>
+                    Keith Andrew Martinez
+                  </h2>
+                      <p>
+                        Student of Web Development, Life, and its embedded Idiosyncrasies
+
+                        <div class="interests">
+                          <h3> Interests </h3>
+                          <ul>
+                                <li>Soccer</li>
+                                <li>Rock climbing</li>
+                                <li>VR Games</li>
+            
+                          </ul>
+                            
+                        </div>
+                      </p>
+
+            </div>
+
+          
+        </main>
+    </div>
+</body>
+  
+  
+
+  
+  
+      <!-- <script src="script.js"></script> -->
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink! -->
+
+
+
+
+  <div id="content">
+    <div id="sidebar">
+      <!-- sidebar content goes here -->
+    </div>
+    <div id="main">
+      <!-- main content goes here -->
+    </div>
+  </div>
+
+<!-- Replace the script below with social network icons with invitation to connect -->
+  <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
+</body>
+
+</html>
