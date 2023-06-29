@@ -23,37 +23,36 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    function range(int1, int2) {
-let catcher;
-if(int1 > int2) {int1 = start
-} else if (int1 < int2) {int2 = start)
-} else (int1 === int2) {
-    console.log(int1);
 
+//==========================================================================
+// Reversible Range Function
 
-Push()
-
-}
-
-
-if (int1 = start){
-for (let i = start; int2 <= i; i++);
-}
-        return Array[all int bw two given parameters]
-
-    } else if 
-        (int2 = start) {
-            for (let i = start; int1 >= i; i--);
-        } else { console.log(int1)}
+// // Set variable as array to collect output returned from range of two arguments
+// let rangeArray = [];
+// // compare and evaluate larger of two arguments, with a nested loop if it returns true
+// // if true, return array in reverse order (high to low)
+//     if(start >= end) {
+//         for(let i = start; i >= end; i--){
+//         rangeArray.push(i);
+//     }   else {
+//         for(let i = end; i <= start; i++) {
+//             rangeArray.push(i);
+//     }
+//     }
+//     return range();
     
-    
-    
-    
+    // function range(start, end) {
+		let array = [];
+		while (start <= end) {
+    		array.push(start++);
+    }console.log(range(8,14));
+    return range(1,5);
+  
+//==========================================================================
+
+
     // YOUR CODE GOES ABOVE HERE //
 }
-
-
-
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
