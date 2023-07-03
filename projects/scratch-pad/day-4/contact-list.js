@@ -44,7 +44,8 @@ let contact = {};
     contact.nameLast = nameLast
     console.log(contact)
 //console.log? what information does it provide? should be key value pairs of contact object
-}
+
+
 
 ///should console.log be inside or outside of the function? what is the difference?
 console.log(contact);
@@ -52,6 +53,8 @@ console.log(contact);
 //once contact is confirmed correctly logged within function, can return the contact as output of function
 
 return contact;
+}
+
 
 //Sample contact input then of makeContact(1, 'Max', 'Gaudin'); 
         // => {id: 1, nameFirst: 'Max', nameLast: 'Gaudin'}
@@ -68,7 +71,7 @@ function makeContactList() {
     // if it does not (what specific considerations would be helpful to decide?) With the first key of id,
     // the number might correspond to order of entry or oder of list, so can start with an array
 
-    var contacts=[ ]
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
@@ -79,33 +82,68 @@ function makeContactList() {
        // to the property of makeContactList) that includes: length, addContact, findContact,
         //and removeContact (all methods embedded within makeContactList)
         //addContact should take an object of contact and add it to list (var contacts), adding with push method
-        addContact(contact){
-            contacts.push(contact);
+        addContact: function(contact) {
+            return contacts.push(contact);           // is this correct?? need to test syntax with an actual contact to see if it functions as it should
         },
-        //next method is findContact: can use a conditional statement that compares an inputed string with
-        //those contained, using a loop
-        findContact(fullName){
-            if('nameFirst' === contact.nameFirst && 'nameLast' === contact.nameFLast){ 
-                return result}
-            
-                
-                //**need to figure out segmentation of fullName and looping structure for test 
-                //this would require a loop to check through each
-            //each contact and evaluate whether it matches each string whether by first or last name, or both
-        }, 
-        removeContact(contact){
-            //using .splice method on array, can remove inputed contact, but need to know the indice location,
-            and repeat for end value for splice method
-            contacts.splice(contact, contact)
-        }
+//next method is findContact: can use a conditional statement that compares an inputed string with
+//those contained, using a loop
+
+//since this method takes fullName as the parameter, it is worth setting and storing an additional variable into the object that can be set
+// as the 'firstName' and 'lastName'
+// this will iterate through each contact in the contacts list to identify a match if exists, by checking the conditiional listed below   
+// since fullName is the set input for this function, will need to either split the name or combine the strings of first and last name to compare         
+
+        findContact: function(fullName) {
+            for (var i = 0; i < contacts.length; i++) {
+                if(fullName === contacts[i]['nameFirst'] + ' ' + contacts[i]['nameLast']) {
+                    return contacts[i];
+                }
+            }
+        },
 
 
-        }
+// using .splice method on array, can remove inputed contact, but need to know the indice location,
+// and repeat for end value for splice method
+          
+        removeContact: function(contact) {
+            for (var i = 0; i < contacts.length; i++) {
+                if(contacts[i] === contact) {
+                    return contacts.splice(i, 1);
+                }
+            }
+        },
+ 
+
+// 
+//
+//
+
+
+  printAllContactNames: function(){
+
+// declare variable an empty string to list contacts
+        var allContacts = '';
+
+//iterate over contacts list
+        for(var i = 0; i < contacts.length; i++){
+
+//check each name to see if full name is last one in the list (to skip line break)
+         if(i === contacts.length - 1){
+
+//if condition evaluates as false, loop has not yet reached last name in contacts list
+
+        allContacts += contacts[i]['nameFirst'] + ' ' + contacts[i]['nameLast']
+
+// if true, then logs last name without line break
+
+            }else{
+        allContacts += contacts[i]['nameFirst'] + ' ' + contacts[i]['nameLast'] + '\n';
+            }
+        }return allContacts;
     }
+
+  }
 }
-
-
-
 
 // YOUR CODE GOES ABOVE HERE //
 

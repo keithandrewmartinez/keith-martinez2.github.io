@@ -12,15 +12,23 @@
  * TIP: In JavaScript, how can we decipher if a value is an Array? Can typeof
  * work?
  */
-function isArray(value) {
+    function isArray(value) {
     // YOUR CODE BELOW HERE //
 
 
- //=========================================================
+ //===========================================================================
  //1. Type of: Array
 
-    return Array.isArray(value);
+ // Function returns Boolean value; isArray (static metho) tests the passed value, 
+ // but function requires return statement to provide result
 
+    if (Array.isArray(value) )
+    {return true
+    } else {
+      return false
+    }
+      
+//============================================================================
 
     // YOUR CODE ABOVE HERE //
 }
@@ -33,52 +41,81 @@ function isArray(value) {
  * null, not an Array, not a Date - all of these will return 'object' if used 
  * with typeof.
  */
-function isObject(value) {
+    function isObject(value) 
+
     // YOUR CODE BELOW HERE //
 
 
 //==============================================================
- //2. Type of: Object
-// returns true if given Object as collection, otherwise false
-// so must test for alternative conditions that eliminate false positives 
-// like null, array, and Date
 
-//can first asses if array with Array.isArray
-if(value !== Array.isArray(value){      //want to continue through tests, 
-    //so should structure it to return false if is array, hence !== structure
-//if true, should return false (because not an Object as collection)
-return false
-} else if (value instanceof Date) {   //next test is test for instance of Date as false 
-    //positive for object(BUT DOES THIS ONLY WORK IF IT IS AN OBJECT???)
+/*
+2. Type of: Object
 
-}
-//     testObj = {a:1,b:2,c:3}
+Returns true if given Object as collection; otherwise false.
+Must test for alternative conditions that have false positives 
+('null', 'array', and 'Date')
 
-// let a = Object.prototype.toString.call(value);
+*/
 
-// let b = Object.prototype.toString.call(testObj);
 
-// if(value === 'Null') {
-//     console.log(false) 
-// } else if (Array.isArray(value) === true) 
-// } else if {new instanceof now === Date()}
+/*
+// REFERENCE NOTES:
+console.log(typeof Date)                    // function
+console.log(typeof object)                  // undefined
 
-// }
-//     a === b){
-//     return true }
-//     else {
-//         return false
-    
-//      test to confirm not null,  === null 
-//      not Array, Array.isArray
-//      not a Date (instance of)
-// }
+object = {1:'a', 2: 'b', 3:'c'}
+console.log(typeof object)                   // object
+
+console.log(new Date() instanceof Date)      // true
+var today = new Date()
+console.log(typeof today);                   // object
+
+console.log(typeof 11/12/23)                 // NaN
+
+
+
+
+console.log(new Date() instanceof Date)      // true
+var today = new Date()
+console.log(typeof today);                   // object
+
+*/
+
+//console.log(isObject(value))                 //undefined at Object
+
+
+/*
+Using chained/compound conditional
+CONFIRM
+1. - is object
+2. - isn't array ( Array.isArray != array)
+3. - isn't null 
+4. - isn't of type date
+5. - then IS literal object
+
+*/
+
+// OBJECT FOR TEST: value = {1:'a', 2: 'b', 3:'c'}
+
+// function isObject(value) {
+
+{    // Open curly brace for initialization of function
+
+if(typeof value === 'object'                 // true
+    && !Array.isArray(value)                 // true
+    && value !== null                        // true
+    && false === (value instanceof Date)     // false === false; true
+   ){
+    return true;
+  } else {
+    return false;                        
+ }
+
+
+// TEST DONE AFTER FUNCTION: console.log(isObject(value))             // true (is object literal)
+
 
 //==========================================================================
-
-
-
-
     
     // YOUR CODE ABOVE HERE //
 }
@@ -105,6 +142,16 @@ return false
     // else if object typeof === object 
 
 
+
+        if(typeof value === 'object'                 // true
+            && value !== null                        // true
+            && false === (value instanceof Date)     // false === false; true
+           ){
+            return true;
+          } else {
+            return false;                        
+         
+          }
 
 
 //==========================================================================
@@ -139,20 +186,44 @@ function typeOf(value) {
     
 
 //==========================================================================
-// TYPE OF: w Function ,m
+// TYPE OF: Function 
+// Construct conditional chain to test for each of the following possible inputs 
+// (As a possible argument for the function typeOf
+// Function returns a string value that identifies the data type of its passed argument
+// Order is important if not necessary because of method for identification of type
+// so ideal order uses typeof last (this method works ineffectively with 'object', date, null, and array, 
+// so those should go first, beginning with 'array' (has its own static method)
+// date 
+// null
+// typeof (string)
 
 
-    // Types are one of: 
-    // typeOf("string")   - "string"
-    // *    - "array"
-    // *    - "object"
-    // *    - "undefined"
-    // *    - "number"
-    // *    - "boolean"
-    // *    - "null"
-    // *    - "function"
-    // *    - "date"
-    // * 
+let stringOfDataType = "";
+    if(typeof value === "string"){
+        stringOfDataType = "string"
+    }
+typeof("string")   - "string"
+
+let stringValue = "";                                                     //  initialize stringValue
+if (typeof value === 'object'){                                           //  tests if value is an object
+    if (Array.isArray(value)){                                        // if true, tests if it is an array
+        stringValue = "array";                                    // if true, assigns stringValue to "array"
+    }else if (Object.prototype.toString.call(value) === '[object Date]'){            //  tests if is a date
+        stringValue = "date";                                //  if true, assigns stringValue to "date"
+    }else if (value === null){                                          //  tests if equal to null
+        stringValue = "null";                                   //  if true, assigns stingValue to "null"
+    }else {                                                             //  any other condition
+        stringValue = "object";                                         //  assigns stringValue to "object"
+    }
+} else {                                                            //  any other condition, evaluates with typeof
+    stringValue = typeof value;
+}
+
+//  assigns stringValue to a string of the value type
+
+
+return stringValue;                                                    
+
 
 
 //==========================================================================

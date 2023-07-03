@@ -13,14 +13,38 @@
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
     
+
+
+
+// Write a function named fizzBuzz that prints numbers from 1 to 100 with several exceptions
+// 1. for multiples of 3, print Fizz instead
+// 2. for multiples of 5, print "Buzz"
+// 3. for multiples of BOTH 3 and 5, print "FizzBuzz" (should test for this first)
+
     function fizzBuzz() {
+
+
+// Create a (conditionally incrementing) For-loop that increments, while testing conditional chain for divisibility by 3 or 5
+
         for (let i = 1; i <= 100; i++) {
+
+// First evaluate if i is perfectly divisible by BOTH 3 and 5, and prints "FizzBuzz" if it is, 
+// print "FizzBuzz" 
+
           if (i % 15 === 0) {
             console.log("FizzBuzz");
+
+// Then, check if i is perfectly divisible by 3, and print "Buzz" if so
+
           } else if (i % 3 === 0) {
             console.log("Fizz");
+
+// Then, check if i is perfectly divisible by 5, and print "Buzz" if so
+
           } else if (i % 5 === 0) {
             console.log("Buzz");
+
+
           } else {
             console.log(i);
           }
@@ -31,31 +55,6 @@ function fizzBuzz() {
       fizzBuzz();
 
 
-
-//     // Write a function named fizzBuzz that prints numbers from 1 to 100 with several exceptions
-//     // 1. for multiples of 3, print Fizz instead
-//     // 2. for multiples of 5, print "Buzz"
-//     // 3. for multiples of BOTH 3 and 5, print "FizzBuzz"
-
-//     // Create a (conditionally incrementing) For-loop that increments, 
-//     // while testing (if-else-if conditional chain) for divisibility by 3 or 5
-//     for (let i = 1; i <= 100; i++) {
-//         // First evaluate if i is perfectly divisible by BOTH 3 and 5, and prints "FizzBuzz" if it is, print "FizzBuzz"
-//         if (i % 15 === 0) {
-//             console.log("FizzBuzz")
-//             // Next, check if i is perfectly divisible by 3, and print "Fizz" if so
-//         } else if (i % 3 === 0) {
-//             console.log("Fizz");
-//         }
-//         // Then, check if i is perfectly divisible by 5, and print "Buzz" if so
-//         else (i % 5 === 0); {
-//             console.log("Buzz");
-//         } console.log(i);
-
-
-            
-//     }
-//   console.log(fizzBuzz());          
 
 
             // YOUR CODE GOES ABOVE HERE //

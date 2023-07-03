@@ -26,28 +26,31 @@ function range(start, end) {
 
 //==========================================================================
 // Reversible Range Function
+/*
+Set variable as array to collect output returned from range of two arguments
 
-// // Set variable as array to collect output returned from range of two arguments
-// let rangeArray = [];
-// // compare and evaluate larger of two arguments, with a nested loop if it returns true
-// // if true, return array in reverse order (high to low)
-//     if(start >= end) {
-//         for(let i = start; i >= end; i--){
-//         rangeArray.push(i);
-//     }   else {
-//         for(let i = end; i <= start; i++) {
-//             rangeArray.push(i);
-//     }
-//     }
-//     return range();
-    
-    // function range(start, end) {
-		let array = [];
-		while (start <= end) {
-    		array.push(start++);
-    }console.log(range(8,14));
-    return range(1,5);
-  
+compare and evaluate larger of two arguments, with a nested loop if it returns true
+if true, return array in reverse order (high to low)
+*/ 
+
+
+let rangArr = [];
+  if (start === end) {
+    return rangArr[Math.floor(start)]
+  }
+    if (start > end)  {
+      
+       for (let i = start; i >= end; i--)
+        {          rangArr.push(i)}
+
+             } else if (start < end)      {
+      
+             for (let i = start; i <= end; i++)   {
+               
+                 rangArr.push(i) }
+    }
+return rangArr;
+
 //==========================================================================
 
 

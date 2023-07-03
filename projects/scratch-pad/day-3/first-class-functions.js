@@ -13,52 +13,20 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
+//===============================================================
 
+// Given a base, which is either a string or number,
+// return a function that tests whether the 'given value' is greater than the "base"
+// Consider possible complications with variations in case, if alphabetical, 
+// or negative, if numeric
 
+    return function (value) {              // alphabetic characters have embedded values
 
-//=================================================================    
+        return value > base;               // expression returns boolean
+    }
     
-//will need to create a test that evaluates a value with the base
-//should return a Function
-//Nested, inner function should have a value that it compares against base, a 
-//test to compare them, and an output that is the result of that comparison
-// Since comparison output assesses which of the two is greater, 
-//can structure test as base > value (the internal function's value--is this a 
-//parameter though or set as a constant within a function?)
-
-function nestedFunction(value) {
-   if(value > base) {
-    return true
-   } else {
-    return false
-   }
-}
-return nestedFunction(value)
-
-
-    // first test data type for string or number
-    // if Number, then evaluate if larger than base, 
-    // if string, evaluate with base as string
-
-    // return function(value){
-    //         return true if value > base;
-
-//     function createGreaterThanFilter(base) {
-//        if (typeof value === 'string'|| typeof value === 'number') {
-//           return 
-          
-//           value > base;
-//         } else {
-//           return false;
-          
-//         }
-// return function(value) {
-
-
-
 
 //=================================================================  
-  
 
     // YOUR CODE ABOVE HERE //
 }
@@ -71,17 +39,17 @@ return nestedFunction(value)
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
  
+ //=================================================================  
+ 
+// Inverse of previous function, if given a base, also either string or number,
+// return a function that tests whether the 'given value' is LESS THAN than the "base"
 
- //=================================================================    
+
+    return function (value) {
+        return value < base;
+    }
     
-    
-
-
-
 //================================================================= 
-
-
-
     // YOUR CODE ABOVE HERE //
 }
 
@@ -93,32 +61,26 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-
-    
 //================================================================= 
 
+// Given a starting character, that may not be alphabetical, 
+// return a function that tests a string to evaluate if its first character is the same
 
-startsWith = string[0].toString
-// return a Function that tests whether a given String starts with the startsWith 
-//  character.
-return function firstChar
+    return function(string){
 
-const ages = [32, 33, 16, 40];
-const result = ages.filter(checkAdult);
+// Evaluate if string at index 0 starts with character
+// Before testing, standardize character (and string), to test both as lowercase characters
 
-function checkAdult(age) {
-  return age >= 18;
+return string[0].toLowerCase() === startsWith.toLowerCase();
+// if character at index 0 for each string is a match, returns true
+    
 }
-
-
-
+// given input character, returns function that tests if string begins with the character passed 
+// as argument = "(startsWith)" 
+        
 
     
 //================================================================= 
-   
-   
-   
-   
    
     // YOUR CODE ABOVE HERE //
 }
@@ -134,13 +96,24 @@ function createEndsWithFilter(endsWith) {
     
 //=================================================================    
   
-// Given a endsWith character, which will be a single character, 
-// return a Function that tests whether a given String ends with the endsWith 
-// character.
+// Opposite of previous, if given an endsWith character(single character, not
+// necessarily alphabetical, return a Function that tests whether a given String ends with the 
+// given "endsWith" character.
 
 
+// Create function that tests string for its last character
 
+return function(string){
 
+// Evaluate if string at [string.length -1] starts with character
+// Before testing, standardize character (and string), to test for strictly lowercase characters
+    
+    return string[string.length - 1].toLowerCase() === endsWith.toLowerCase();
+    // if character at index 0 for each string is a match, returns true
+        
+    }
+ // given the passed character, returns a function that tests whether string ends with character passed
+    
 //================================================================= 
 
 
@@ -159,21 +132,28 @@ function modifyStrings(strings, modify) {
    
 //================================================================= 
  
-// Given an Array of Strings and a Function designed to modify a String, 
-// return the Array of the Strings, modified.
-// * 
-// TIP: You need to loop over the Strings, right? We need to pass each String to 
-// the modify Function, but we need to collect the results into some collection.
 
 
-
-    // modify is a function that takes in a string and modifies it
+// Use a for-loop to iterate through strings and push 
+// them into a resulting array
     
+ // set variable for resulting array (that collects the modified strings)
+  let result = [];
+  
+// loop over the Array of Strings
+
+  for (let i = 0; i < strings.length; i++) {
+
+// Push strings into array, result, as they are iterated through loop
+
+    result.push(modify(strings[i]));
+  }
+
+  return result;  
     
 
 
 //================================================================= 
-
 
 
     // YOUR CODE ABOVE HERE //
@@ -191,25 +171,27 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
  
-    
 //================================================================= 
 
+// Similar to previous function, as an implementation of the culmination of them, 
+// create a function that will test an array and return boolean
 
+// declare a function that takes an array of strings as a parameter
+//function iterates loop through all strings and tests if they pass a particular test. If ALL
+//strings pass the test, return all.
 
+// Like previous function, will also require a for-loop
+  
+    for (var i = 0; i < strings.length; i++) {
 
-/** 
- * Given an Array of Strings and a Function designed to test the String in some 
- * way and return a Boolean on whether it passed, return true if ALL Strings pass the test.
- * 
- * Imagine you had a list of names, and you wanted to test they all 
- * begin with "C", or they are all exclaimations that end with "!".
- * 
- * TIP: You need to loop over the Strings, right? And pass them to the test?
- */
-    // test is a function that will test an array and return ... true??
-    
-    
+        // pass current array value to the test function
 
+        if (test(strings[i]) === false) {
+
+            return false;
+        }
+    }
+ return true;
 
 
 //================================================================= 
