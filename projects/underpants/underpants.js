@@ -79,6 +79,28 @@ _.typeOf = function(value) {
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+ // Arguments:   1) An array   2) A number
+    _.first = function(array, number) {
+
+    // 1) If <array> is not an array, return []
+      if(!Array.isArray(array) || number < 0 ) {
+        return [];
+      }
+    
+    // 2) If <number> is not given or not a number, return just the first element in <array>.
+      else if(number === undefined || NaN || (number < 0)){
+        return array[0];
+      }
+     
+    // 3) Otherwise, return the first <number> items of <array>
+        else {
+        return array.slice(0, number);
+      }
+                  
+    }
+      
+    
+
 
 /** _.last
 * Arguments:
