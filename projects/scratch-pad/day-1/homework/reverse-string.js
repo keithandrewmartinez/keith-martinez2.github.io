@@ -22,10 +22,6 @@
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
 /*
-I
-O
-C
-E
 
 6 Steps which begin with
 1. Defining length of string using .length-1;
@@ -42,11 +38,12 @@ for (let i = input.length - 1; i >= 0; i--) {
 
       reversed += input[i];
 }
-//Critically important to ensure that the return tag is OUTSIDE of the loop braces or the loop will only run once before returning its output
+//Critically important to ensure that the return tag is OUTSIDE of the loop braces
+//  or the loop will only run once before returning its output
+
       return reversed;
     
-    
-    
+
     // YOUR CODE GOES ABOVE HERE //
 }
 
