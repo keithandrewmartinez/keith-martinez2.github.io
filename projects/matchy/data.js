@@ -30,8 +30,11 @@ noises[0] = 'oootza';
 noises.push('iopaa');
 noises.unshift('yeet');
 noises[noises.length] = 'brrrt';
+
 console.log(noises.length);
-console.log(noises[noises.length]);
+// Must log index at "- 1" or will return 'undefined'
+console.log(noises[noises.length-1]);
+
 console.log([noises]);
 
 console.log(animal);
@@ -41,8 +44,12 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
 animal.noises = [noises];
- animal.noises.push('weeeeeooohh');
+animal.noises.push('weeeeeooohh');
+
+// console.log(noises)
+// console.log(animal)
 
 
 /* *******************************************************************
@@ -81,7 +88,7 @@ var duck = {};
 duck = {
   species: 'duck', 
   name:'Jerome',
-noises:['quack','honk','sneeze', 'woosh']}
+  noises:['quack','honk','sneeze', 'woosh']}
 
 animals.push(duck);
 
@@ -106,11 +113,57 @@ chako = {
 animals.push(chako);
 
 console.log(animals);
+
 console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+// initializing friends variable (declared in "Do Not Remove Code Below")
+// Chose array data structure best suited for accessing and manipulating lists
+
+var friends = [];
+
+
+var animals = [animal, duck, chocobo, chako];
+
+// Create function that has a data type array as single parameter
+
+function getRandom(array){
+  var index = array;
+  // To create random function, will use a combination 
+  // of numbers methods in conjunction with array.length, 
+  // to set an upper limit for random animal selection using 
+  // "array.length" (.length - 1 is not necessary ) because 
+  // Math.random and Math.ceil instead of Math.floor, confirm upper index
+  // selection, and Math.random * Math.random provides a non-zero number
+  // As such, with .length, index will return number from 1-3, inclusive
+  index = (Math.ceil(Math.random() * Math.random() * array.length));
+ 
+  console.log(index)  // number from 1 - 3
+  
+    return index; 
+}
+
+// Can now get and add (using push (array) method a new random 
+// friend from animals object into friends array by invoking
+// getRandom as index accessed and pushed into friends array
+
+console.log(animals[0]['friends'] = friends);
+
+console.log(animals[0].name) // test array access syntax structure; Obpikko
+
+friends.push(animals[getRandom(animals)].name)
+
+// TO ADD 'friends' property to animals object 
+animals[0]['friends'] = friends
+
+
+console.log(friends)
+
+console.log(animals)
+ 
 
 
 
