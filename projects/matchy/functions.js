@@ -48,19 +48,108 @@ function search(animals, name){
 //////////////////////////////////////////////////////////////////////
 
 
+// Declare a function named replace that has a signature of 
+// 'replace(animals, name, replacement)' that takes three parameters
+
+function replace(animals, name, replacement) {
+
+  // Create a for loop that iterates through each animal object 
+  // of the array that checks for animal of specified name, and replaces with third argument if found; else does nothing
+  
+    for (i = 0; i < animals.length; i++) {
+  
+  // Create conditional chain to evaluate if animal matching name exists; and if so, replace with third argument of function
+        if (animals[i].name === animals.name) {
+            animals[i] = replacement
+            } else {
+              return;
+            }
+          
+    }
+    
+  }
+  
+  // Create additional animal object to test functionality of replace function
+  
+  var teacupTurtle = {
+    species: 'reptile',
+    name: 'Turpentul',
+    noises: ['oof', 'derps', 'tsk-tsk', 'ughh']
+  }
+  
+  console.log(replace(animals, animals['Choco'], teacupTurtle ))
+  
+  console.log(animals) // replacement at proper index confirmed
+   
+  ////////////////////
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// Declare a function 'remove' that takes two parameters; 
+// array of animals and name of animal on which to perform search
 
+function remove(animals, name){
+  
+  // Create for loop to check for presence of matching name of animal (within array)
+  
+  for (let i = 0; i < animals.length; i++) {
+// Use conditional chain to verify if name of animal exists in array
+
+    if (animals[i].name === animals.name) {
+// If found, remove that object, using splice method
+// Using splice method remove 1 object at interval i (animals.splice(i,1))
+     animals.splice(i, 1);
+    }
+  }
+  return animals;
+}
+
+console.log(animals)
+console.log(remove(animals, animals['Jerome']));
+console.log(animals)
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 
+teacupTurtle = {
+  species: 'reptile',
+  name: 'Turpentul',
+  noises: ['oof', 'derps', 'tsk-tsk', 'ughh']
+}
 
+// Create function 'add' that takes two parameters; array of animals and Object of new animal (to be added)
+
+function add(animals, possibAnimal){
+// Create for loop to check for presence of matching conditions within animal array
+   for (let i = 0; i < animals.length; i++) 
+   
+     
+// Use conditional chain to verify if name of animal exists in array
+// Test conditions:
+     // 1. animal.length > 0
+     // 2. animal.species.length > 0
+     // 3. animal.name !== animals[i].name
+// If any of these conditions are false, should return null (not add or create new animal to array); but if all are true, should add new animal to animals array
+    // Easier to test if any are false, so conditional statements built on negation and bang statements are easiest to return null if any are true
+
+(!(possibAnimal.name.length > 0) || 
+ !(possibAnimal.species.length > 0) || 
+ !(animals.name === possibAnimal.name) ?
+        null:
+    animals.push(possibAnimal))
+    
+}
+
+console.log(add(animals, teacupTurtle));
+
+console.log(add(animals, animal));
+console.log(animals)
 /**
  * You did it! You're all done with Matchy!
  */
