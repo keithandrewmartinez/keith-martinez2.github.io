@@ -20,7 +20,7 @@
 
 # How to Install Projects Using os install
 1) In terminal, type = code ~/.bashrc
-2) On line 4 of bashrc file, type => export CHE_PROJECTS_ROOT=/workspace
+2) On line 4 of bashrc file, type => ins
 3) Exit out of bashrc file
 4) Kill the terminal
 5) In terminal, type => sudo apt-get install subversion
