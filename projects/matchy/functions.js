@@ -1,3 +1,6 @@
+
+
+
 /**
  * Part 2
  *
@@ -17,29 +20,32 @@
 
 function search(animals, name){
 
-    // Create for loop to iterate through elements of animalArray to check if name matching animal exists; return animal's object if it does, null if not
-    // Loop iterates until length of animalArray is fully checked, so that method can be applied with a less than operator (-1 after length is not needed, because it is the same as i < .length)
+  // Create for loop to iterate through elements of animalArray to check if name matching animal exists; return animal's object if it does, null if not
+  // Loop iterates through animals array until each index is checked, so that method can be applied after evaluation
+    
+    for (let i = 0; i < animals.length; i++){
       
-      for (let i = 0; i < animals.length; i++){
+  // checking each name of the array will require a conditional chain to evaluate animal name matches, otherwise returning null
+      if (animals[i].name === name) 
+      {
         
-    // checking each name of the array will require a conditional chain to evaluate animal name matches, otherwise returning null
-        if (animals[i].name === animal.name) {
-          
-            return animals[i]}
-      
-          else {
-    // If matching name not found, function returns null     
-            return null;
-          
-        }  
-        
+          return animals[i];
       }
     
-    // Console log sample name to verify functionality
-    console.log(search(animals, 'Choco'))
+        // else <-- note: clause not necessary here
+          
+          
+// If matching name not found, function explicitly returns null     
+          return null;
     }
-    
-    console.log(search(animals))
+  
+// Console log sample name to verify functionality
+  console.log(search(animals, 'Choco'))
+  }
+  
+  console.log(search(animals, 'Jerome'))
+  
+  
     
     
 
@@ -48,108 +54,113 @@ function search(animals, name){
 //////////////////////////////////////////////////////////////////////
 
 
-// Declare a function named replace that has a signature of 
+// Declare function named replace that has a signature of 
 // 'replace(animals, name, replacement)' that takes three parameters
 
-function replace(animals, name, replacement) {
+function replace(animals, name, replacement) 
+{
 
-  // Create a for loop that iterates through each animal object 
-  // of the array that checks for animal of specified name, and replaces with third argument if found; else does nothing
+// Create a for loop that iterates through each animal 
+// object of the array that checks for animal of specified name, and replaces with third argument if found; else does nothing
   
-    for (i = 0; i < animals.length; i++) {
+    for (let i = 0; i < animals.length; i++) 
+    {
   
-  // Create conditional chain to evaluate if animal matching name exists; and if so, replace with third argument of function
-        if (animals[i].name === animals.name) {
-            animals[i] = replacement
-            } else {
+// Create conditional chain to evaluate if animal matching name exists; and if so, replace with third argument, 'replacement' of function 'replace'
+      if (animals[i].name === name) // check if animal exists with same name
+        {
+        animals[i] = replacement; // replace with replacement object
+  
               return;
-            }
-          
+        }      
     }
-    
-  }
+}
   
   // Create additional animal object to test functionality of replace function
   
-  var teacupTurtle = {
-    species: 'reptile',
-    name: 'Turpentul',
-    noises: ['oof', 'derps', 'tsk-tsk', 'ughh']
-  }
+//   var teacupTurtle = {
+//     species: 'reptile',
+//     name: 'Turpentul',
+//     noises: ['oof', 'derps', 'tsk-tsk', 'ughh']
+//   }
   
-  console.log(replace(animals, animals['Choco'], teacupTurtle ))
+// console.log(replace(animals, animals['Choco'], teacupTurtle ))
   
-  console.log(animals) // replacement at proper index confirmed
-   
-  ////////////////////
+console.log(animals) // replacement at proper index confirmed
 
 
 
-//////////////////////////////////////////////////////////////////////
-// Step 3 - Remove ///////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
+// // Step 3 - Remove ///////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
+
 
 // Declare a function 'remove' that takes two parameters; 
 // array of animals and name of animal on which to perform search
 
-function remove(animals, name){
+function remove(animals, name)
+{
   
   // Create for loop to check for presence of matching name of animal (within array)
   
-  for (let i = 0; i < animals.length; i++) {
+  for (let i = 0; i < animals.length; i++) 
+  {
 // Use conditional chain to verify if name of animal exists in array
 
-    if (animals[i].name === animals.name) {
+    if (animals[i].name === name) {
 // If found, remove that object, using splice method
-// Using splice method remove 1 object at interval i (animals.splice(i,1))
+// remove 1 object at interval i (animals.splice(i,1))
      animals.splice(i, 1);
     }
   }
-  return animals;
+  return;
 }
+
+// remove(animals, animals['Jerome']);
 
 console.log(animals)
 console.log(remove(animals, animals['Jerome']));
 console.log(animals)
 
-//////////////////////////////////////////////////////////////////////
-// Step 4 - Add ///////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
+// // Step 4 - Add ///////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
 
 
-teacupTurtle = {
-  species: 'reptile',
-  name: 'Turpentul',
-  noises: ['oof', 'derps', 'tsk-tsk', 'ughh']
-}
+// teacupTurtle = {
+//   species: 'reptile',
+//   name: 'Turpentul',
+//   noises: ['oof', 'derps', 'tsk-tsk', 'ughh']
+// }
 
 // Create function 'add' that takes two parameters; array of animals and Object of new animal (to be added)
 
-function add(animals, possibAnimal){
+function add(animals, animal){
 // Create for loop to check for presence of matching conditions within animal array
    for (let i = 0; i < animals.length; i++) 
-   
-     
-// Use conditional chain to verify if name of animal exists in array
-// Test conditions:
-     // 1. animal.length > 0
-     // 2. animal.species.length > 0
-     // 3. animal.name !== animals[i].name
-// If any of these conditions are false, should return null (not add or create new animal to array); but if all are true, should add new animal to animals array
-    // Easier to test if any are false, so conditional statements built on negation and bang statements are easiest to return null if any are true
-
-(!(possibAnimal.name.length > 0) || 
- !(possibAnimal.species.length > 0) || 
- !(animals.name === possibAnimal.name) ?
-        null:
-    animals.push(possibAnimal))
-    
+   {
+// Check if animal with same name exists, and return null if so
+    if (animal.name === animals[i].name) 
+    {
+          return;  // effectively returns null
+    }
+    }
+  // Otherwise, if not empty string or species length, push animal to animals array
+    if (animal.name.length > 0 && animal.species.length > 0) 
+{
+      animals.push(animal);
 }
 
-console.log(add(animals, teacupTurtle));
+}
 
-console.log(add(animals, animal));
-console.log(animals)
+// console.log(add(animals, teacupTurtle));
+
+// console.log(add(animals, animal));
+
+// console.log(animals)
+
+
+
 /**
  * You did it! You're all done with Matchy!
  */
